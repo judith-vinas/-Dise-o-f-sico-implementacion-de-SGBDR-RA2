@@ -114,7 +114,7 @@ ALTER TABLE SOCIOS
 ### 2.1 Vista de préstamos activos
 
 ```sql
-CREATE OR REPLACE VIEW VISTA_PRESTAMOS_ACTIVOS AS
+CREATE VIEW VISTA_PRESTAMOS_ACTIVOS AS
     SELECT
         L.Titulo        AS Titulo_Libro,
         E.ID_Ejemplar   AS ID_Ejemplar,
@@ -160,7 +160,8 @@ Un **TABLESPACE** es la unidad lógica de almacenamiento en Oracle que agrupa un
 
 ```sql
 CREATE USER super_admin IDENTIFIED BY "contraseña";
-GRANT DBA TO super_admin;
+GRANT ALL PRIVILEGIES ON *.* TO super_admin WITH GRANT OPTION;
+FLUSH PRIVILEGIES;
 ```
 
 #### Crear usuario `tecnico_inventario`
